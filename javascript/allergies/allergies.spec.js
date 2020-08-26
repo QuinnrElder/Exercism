@@ -164,27 +164,27 @@ describe('Allergies', () => {
   });
 
   describe('testing for pollen allergy', () => {
-    xtest('not allergic to anything', () => {
+    test('not allergic to anything', () => {
       const allergies = new Allergies(0);
       expect(allergies.allergicTo('pollen')).toEqual(false);
     });
 
-    xtest('allergic only to pollen', () => {
+    test('allergic only to pollen', () => {
       const allergies = new Allergies(64);
       expect(allergies.allergicTo('pollen')).toEqual(true);
     });
 
-    xtest('allergic to pollen and something else', () => {
+    test('allergic to pollen and something else', () => {
       const allergies = new Allergies(224);
       expect(allergies.allergicTo('pollen')).toEqual(true);
     });
 
-    xtest('allergic to something, but not pollen', () => {
+    test('allergic to something, but not pollen', () => {
       const allergies = new Allergies(160);
       expect(allergies.allergicTo('pollen')).toEqual(false);
     });
 
-    xtest('allergic to everything', () => {
+    test('allergic to everything', () => {
       const allergies = new Allergies(255);
       expect(allergies.allergicTo('pollen')).toEqual(true);
     });
