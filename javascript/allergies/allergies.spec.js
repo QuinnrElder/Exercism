@@ -191,27 +191,27 @@ describe('Allergies', () => {
   });
 
   describe('testing for cats allergy', () => {
-    xtest('not allergic to anything', () => {
+    test('not allergic to anything', () => {
       const allergies = new Allergies(0);
       expect(allergies.allergicTo('cats')).toEqual(false);
     });
 
-    xtest('allergic only to cats', () => {
+    test('allergic only to cats', () => {
       const allergies = new Allergies(128);
       expect(allergies.allergicTo('cats')).toEqual(true);
     });
 
-    xtest('allergic to cats and something else', () => {
+    test('allergic to cats and something else', () => {
       const allergies = new Allergies(192);
       expect(allergies.allergicTo('cats')).toEqual(true);
     });
 
-    xtest('allergic to something, but not cats', () => {
+    test('allergic to something, but not cats', () => {
       const allergies = new Allergies(64);
       expect(allergies.allergicTo('cats')).toEqual(false);
     });
 
-    xtest('allergic to everything', () => {
+    test('allergic to everything', () => {
       const allergies = new Allergies(255);
       expect(allergies.allergicTo('cats')).toEqual(true);
     });
