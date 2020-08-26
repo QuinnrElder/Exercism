@@ -56,27 +56,27 @@ describe('Allergies', () => {
   });
 
   describe('testing for shellfish allergy', () => {
-    xtest('not allergic to anything', () => {
+    test('not allergic to anything', () => {
       const allergies = new Allergies(0);
       expect(allergies.allergicTo('shellfish')).toEqual(false);
     });
 
-    xtest('allergic only to shellfish', () => {
+    test('allergic only to shellfish', () => {
       const allergies = new Allergies(4);
       expect(allergies.allergicTo('shellfish')).toEqual(true);
     });
 
-    xtest('allergic to shellfish and something else', () => {
+    test('allergic to shellfish and something else', () => {
       const allergies = new Allergies(14);
       expect(allergies.allergicTo('shellfish')).toEqual(true);
     });
 
-    xtest('allergic to something, but not shellfish', () => {
+    test('allergic to something, but not shellfish', () => {
       const allergies = new Allergies(10);
       expect(allergies.allergicTo('shellfish')).toEqual(false);
     });
 
-    xtest('allergic to everything', () => {
+    test('allergic to everything', () => {
       const allergies = new Allergies(255);
       expect(allergies.allergicTo('shellfish')).toEqual(true);
     });
