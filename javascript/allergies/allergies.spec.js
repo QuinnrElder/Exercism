@@ -29,27 +29,27 @@ describe('Allergies', () => {
   });
 
   describe('testing for peanuts allergy', () => {
-    xtest('not allergic to anything', () => {
+    test('not allergic to anything', () => {
       const allergies = new Allergies(0);
       expect(allergies.allergicTo('peanuts')).toEqual(false);
     });
 
-    xtest('allergic only to peanuts', () => {
+    test('allergic only to peanuts', () => {
       const allergies = new Allergies(2);
       expect(allergies.allergicTo('peanuts')).toEqual(true);
     });
 
-    xtest('allergic to peanuts and something else', () => {
+    test('allergic to peanuts and something else', () => {
       const allergies = new Allergies(7);
       expect(allergies.allergicTo('peanuts')).toEqual(true);
     });
 
-    xtest('allergic to something, but not peanuts', () => {
+    test('allergic to something, but not peanuts', () => {
       const allergies = new Allergies(5);
       expect(allergies.allergicTo('peanuts')).toEqual(false);
     });
 
-    xtest('allergic to everything', () => {
+    test('allergic to everything', () => {
       const allergies = new Allergies(255);
       expect(allergies.allergicTo('peanuts')).toEqual(true);
     });
