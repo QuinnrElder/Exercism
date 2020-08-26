@@ -110,27 +110,27 @@ describe('Allergies', () => {
   });
 
   describe('testing for tomatoes allergy', () => {
-    xtest('not allergic to anything', () => {
+    test('not allergic to anything', () => {
       const allergies = new Allergies(0);
       expect(allergies.allergicTo('tomatoes')).toEqual(false);
     });
 
-    xtest('allergic only to tomatoes', () => {
+    test('allergic only to tomatoes', () => {
       const allergies = new Allergies(16);
       expect(allergies.allergicTo('tomatoes')).toEqual(true);
     });
 
-    xtest('allergic to tomatoes and something else', () => {
+    test('allergic to tomatoes and something else', () => {
       const allergies = new Allergies(56);
       expect(allergies.allergicTo('tomatoes')).toEqual(true);
     });
 
-    xtest('allergic to something, but not tomatoes', () => {
+    test('allergic to something, but not tomatoes', () => {
       const allergies = new Allergies(40);
       expect(allergies.allergicTo('tomatoes')).toEqual(false);
     });
 
-    xtest('allergic to everything', () => {
+    test('allergic to everything', () => {
       const allergies = new Allergies(255);
       expect(allergies.allergicTo('tomatoes')).toEqual(true);
     });
